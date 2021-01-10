@@ -1,38 +1,135 @@
-.App {
+/* Colour pallette: f9f7f7; dbe2ef; 3f72af; 112d4e */
+p {
+  font-size: 10pt;
+  color: #112d4e;
+}
+h1 {
+  color: #112d4e;
+}
+strong {
+  color: #112d4e;
+  font-size: 38pt;
+  font-weight: 500;
+  padding-left: 15pt;
+}
+h3 {
+  font-size: 12pt;
+  color: #112d4e;
+  font-weight: 300;
+}
+ul {
+  float: right;
+  padding-left: 20pt;
+  margin: 0;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0 0;
+  position: relative;
+}
+h4 {
+  font-size: 16pt;
+  color: #112d4e;
+  font-weight: 300;
+}
+button {
+  color: #f9f7f7;
+  background-color: #3f72af;
+  border-color: #3f72af;
+  padding: 10px 15px;
+  border: 2pt;
+}
+button:hover {
+  background-color: #dbe2ef;
+  border-color: #6b63ff;
+  color: #112d4e;
+  transition: all 200ms ease-in-out;
+}
+form {
+  padding: 5pt 0 0 0;
+}
+h5 {
+  font-size: 12pt;
+}
+.card-body {
+  padding: 5pt 5pt;
+}
+.units {
+  padding: 5pt 0pt;
+  color: #112d4e;
+  font-size: 10pt;
+  font-weight: 300;
+  position: relative;
+  top: -15px;
+}
+.card {
+  padding: 10px 10px;
+  margin: 5px 5px;
+  width: 94pt;
+  height: 94pt;
+  border-radius: 15pt;
+  color: #112d4e;
+  background-color: #dbe2ef;
+  box-shadow: 2px 2px 2px rgb(0, 0, 0, 5%);
+}
+.row {
+  width: 600px;
+  border: 1px solid #e8e7ff;
+  border-radius: 10pt;
+  padding: 10px 10px;
+  margin: 20pt auto;
+  background-color: #f9f7f7;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 10%);
+}
+.today {
+  padding-left: 10px;
+}
+.form-control {
+  margin: 10px 0;
+}
+.submit {
+  border-radius: 10px;
+}
+.currentLocation {
+  border-radius: 10px;
+}
+.weekDay {
+  color: #112d4e;
+  background-color: rgb(232, 231, 255);
+  border: none;
+  padding: 3px;
+}
+.coded-by {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#weatherDefintion {
+  text-transform: capitalize;
+  margin-bottom: 10pt;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#todayDate {
+  font-size: 10pt;
+  padding-top: 6pt;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.icon {
+  max-width: 15%;
 }
-
-.App-link {
-  color: #61dafb;
+.active {
+  color: #112d4e;
+  cursor: pointer;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.active:hover {
+  text-decoration: none;
+  color: #3f72af;
+}
+.weeklyIcon {
+  max-width: 80%;
+  padding: 5pt 5pt;
+}
+.card-title {
+  margin: 0;
+}
+#world {
+  padding: 0 0 15pt 0;
+  max-width: 300pt;
 }
