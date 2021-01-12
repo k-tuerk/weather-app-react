@@ -16,11 +16,8 @@ export default function App() {
   return (
     <div className="App">
       <Container>
-      <div className="container">
         <Row>
-        <div className="row">
-          <Col>
-          <div className="col-8 my-auto today">
+          <Col className="col-8 my-auto today">
             <div id="world">
               <img src="/world_map_.svg" alt="weatherImage" id="world" />
             </div>
@@ -28,24 +25,17 @@ export default function App() {
             <Weather />
             <Search />
             <Date />
-          </div>
           </Col>
-          <Col>
-          <div className="col-4 my-auto" id="forecast">
-            <Card>
-            <div className="card mx-auto">
+          <Col className="col-4 my-auto" id="forecast">
+            <Card className="card mx-auto">
               <Forecast />
-            </div>
             </Card>
-          </div>
           </Col>
-        </div>
         </Row>
-      </div>
       </Container>
       <div>
         <p className="coded-by">
-          <a href="https://github.com/k-tuerk/weather-app">Open-source code</a>
+          <a href="https://github.com/k-tuerk/weather-app-react">Open-source code</a>
           by Krista Tuerk
         </p>
       </div>
