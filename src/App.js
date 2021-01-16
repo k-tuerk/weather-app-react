@@ -36,7 +36,7 @@ export default function App() {
       <div>
         <p className="coded-by">
           <a href="https://github.com/k-tuerk/weather-app-react">Open-source code</a>
-          by Krista Tuerk
+          {" "}by Krista Tuerk
         </p>
       </div>
     </div>
