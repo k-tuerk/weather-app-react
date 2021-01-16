@@ -21,8 +21,7 @@ export default function App() {
             {/* <div id="world">
               <img src="/world_map_.svg" alt="weatherImage" id="world" />
             </div> */}
-            <h1>Toronto</h1>
-            <Weather />
+            <Weather defaultCity="London"/>
           </Col>
           <Col className="col-4 my-auto" id="forecast">
             <Card className="card mx-auto">

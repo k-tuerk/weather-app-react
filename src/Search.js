@@ -7,7 +7,7 @@ export default function Search() {
         <input
           type="text"
           placeholder="Insert City"
-          class="form-control"
+          className="form-control"
           id="searchCity"
         />
         <button className="submit">Submit</button>
