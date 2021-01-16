@@ -39,6 +39,7 @@ button {
   border-color: #3f72af;
   padding: 10px 15px;
   border: 2pt;
+  margin-right: 5px;
 }
 button:hover {
   background-color: #dbe2ef;
@@ -87,6 +88,8 @@ h5 {
 }
 .form-control {
   margin: 10px 0;
+  width: 500px;
+  max-width: 300px;
 }
 .submit {
   border-radius: 10px;
