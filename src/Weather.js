@@ -26,7 +26,7 @@ return (
       <h1>{props.defaultCity}</h1>
       <h4 id="weatherDefintion">{weatherData.description}</h4>
       <div className="d-flex justify-content-center align-items-center">
-        <img src="icons/${weatherData.icon}.svg" alt="weatherIcon" className="icon" />
+        <img src="icons/50n.svg" alt="weatherIcon" className="icon" />
         <strong id="currentTemp">{Math.round(weatherData.temperature)}°C</strong>
         {/* <div className="units">
           <a href="" id="Clink" className="active">
@@ -39,7 +39,7 @@ return (
         </div> */}
         <div>
           <ul>
-            {/* <li><Date formattedDate={weatherData.date} /></li> */}
+            <li><Date formattedDate={weatherData.date} /></li>
             <li>{weatherData.date}</li>
             <li>
               <h3 id="feelsLike">Feels like {Math.round(weatherData.feelsLike)}°C</h3>
