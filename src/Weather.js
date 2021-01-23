@@ -1,12 +1,29 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
+import { Sparklines, SparklinesLine, SparklinesSpots }from 'react-sparklines'
+import Col from 'react-bootstrap/Col'
 
 export default function Weather(props) {
 const[weatherData,setWeatherData]=useState({ ready: false });
+const [city, setCity] = useState(props.defaultCity);
+
+function search(){
+  const apiKey="a2d28a642d9c48b595a677fa32994307";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(handleResponse);
+}
+
+function handleSubmit(event){
+  event.preventDefault();
+  search();
+}
+
+function handleCityChange(event){
+ setCity(event.target.value);
+}
+
 function handleResponse(response){
-  // console.log(response.data);
   setWeatherData({
     ready: true,
     temperature:response.data.main.temp,
@@ -16,56 +33,40 @@ function handleResponse(response){
     feelsLike:response.data.main.feels_like,
     wind:response.data.wind.speed,
     description:response.data.weather[0].description,
-    icon:response.data.weather[0].icon,
+    icon:`icons/${response.data.weather[0].icon}.svg`,
     date:new Date(response.data.dt * 1000),
+    city: response.data.name,
   })
 }
 
 if(weatherData.ready){
 return (
-    <div>
-      <h1>{props.defaultCity}</h1>
-      <h4 id="weatherDefintion">{weatherData.description}</h4>
-      <FormattedDate date={weatherData.date} />
-      <WeatherInfo />
-      <div className="d-flex justify-content-center align-items-center">
-        <img src="icons/50n.svg" alt="weatherIcon" className="icon" />
-        <strong id="currentTemp">{Math.round(weatherData.temperature)}°C</strong>
-        {/* <div className="units">
-          <a href="" id="Clink" className="active">
-            &degC{" "}
-          </a>
-          |
-          <a href="" id="Flink">
-            &degF
-          </a>
-        </div> */}
-        <div>
-          <ul>
-            <li>
-              <h3 id="feelsLike">Feels like {Math.round(weatherData.feelsLike)}°C</h3>
-            </li>
-            <li>
-              <h3 id="tempHighLow">{Math.round(weatherData.maxTemp)}°C/{Math.round(weatherData.minTemp)}°C</h3>
-            </li>
-            <li>
-              <h3 id="humidity">Humidity: {weatherData.humidity}%</h3>
-            </li>
-            <li>
-              <h3 id="wind">Wind: {Math.round(weatherData.wind)}km/h</h3>
-            </li>
-          </ul>
-        </div>
+  <div>
+    <WeatherInfo data={weatherData} defaultCity={weatherData.city}/>
+    <Col className="col-12">
+          <Sparklines data={[5, 10, 5, 20, 8, 15]} limit={5} width={100} height={20} margin={5}>
+      <SparklinesLine color="#3f72af" />
+      <SparklinesSpots style={{ fill: "#3f72af" }}/>
+      </Sparklines>
+      <form onSubmit={handleSubmit}>
+      <div className="md-form">
+        <input
+          type="text"
+          placeholder="Insert City"
+          className="form-control"
+          id="searchCity"
+          onChange={handleCityChange}
+        />
+        <button className="submit">Submit</button>
+        <button className="currentLocation">Current Location</button>
       </div>
+    </form>
+          </Col>
     </div>
-   
   );
 }else{
-const apiKey="a2d28a642d9c48b595a677fa32994307";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
-
-  return "Loading...";
+  search();
+return "Loading...";
 }
   
 }
