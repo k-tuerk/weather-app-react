@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Date from "./Date";
+import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
 const[weatherData,setWeatherData]=useState({ ready: false });
 function handleResponse(response){
-  console.log(response.data);
+  // console.log(response.data);
   setWeatherData({
     ready: true,
     temperature:response.data.main.temp,
@@ -25,6 +26,8 @@ return (
     <div>
       <h1>{props.defaultCity}</h1>
       <h4 id="weatherDefintion">{weatherData.description}</h4>
+      <FormattedDate date={weatherData.date} />
+      <WeatherInfo />
       <div className="d-flex justify-content-center align-items-center">
         <img src="icons/50n.svg" alt="weatherIcon" className="icon" />
         <strong id="currentTemp">{Math.round(weatherData.temperature)}°C</strong>
@@ -39,8 +42,6 @@ return (
         </div> */}
         <div>
           <ul>
-            <li><Date formattedDate={weatherData.date} /></li>
-            <li>{weatherData.date}</li>
             <li>
               <h3 id="feelsLike">Feels like {Math.round(weatherData.feelsLike)}°C</h3>
             </li>
@@ -57,6 +58,7 @@ return (
         </div>
       </div>
     </div>
+   
   );
 }else{
 const apiKey="a2d28a642d9c48b595a677fa32994307";
