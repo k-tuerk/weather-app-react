@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Date from "./Date";
 
 export default function Weather(props) {
 const[weatherData,setWeatherData]=useState({ ready: false });
@@ -14,7 +15,8 @@ function handleResponse(response){
     feelsLike:response.data.main.feels_like,
     wind:response.data.wind.speed,
     description:response.data.weather[0].description,
-    icon:response.data.weather[0].icon
+    icon:response.data.weather[0].icon,
+    date:new Date(response.data.dt * 1000),
   })
 }
 
@@ -37,6 +39,8 @@ return (
         </div> */}
         <div>
           <ul>
+            {/* <li><Date formattedDate={weatherData.date} /></li> */}
+            <li>{weatherData.date}</li>
             <li>
               <h3 id="feelsLike">Feels like {Math.round(weatherData.feelsLike)}°C</h3>
             </li>

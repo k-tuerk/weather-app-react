@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import Weather from "./Weather";
 import Search from "./Search";
 import Forecast from "./Forecast";
-import Date from "./Date";
+// import Date from "./Date";
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -34,7 +34,7 @@ export default function App() {
       <SparklinesSpots style={{ fill: "#3f72af" }}/>
       </Sparklines>
       <Search />
-            <Date />
+            {/* <Date /> */}
           </Col>
         </Row>
       </Container>
