@@ -45,7 +45,7 @@ if(weatherData.ready){
 return (
   <div>
     <Row>
-    <Col className="col-12">
+    <Col className="col-8 my-auto">
     <WeatherInfo data={weatherData} defaultCity={weatherData.city}/>
           <Sparklines data={[5, 10, 5, 20, 8, 15]} limit={5} width={100} height={20} margin={5}>
       <SparklinesLine color="#3f72af" />
@@ -61,7 +61,7 @@ return (
             onChange={handleCityChange}
           />
         <button className="submit">Submit</button>
-        <button className="currentLocation">Current Location</button>
+        {/* <button className="currentLocation">Current Location</button> */}
       </div>
       </form>
     </Col>

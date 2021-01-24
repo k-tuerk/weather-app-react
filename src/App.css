@@ -2,6 +2,7 @@
 p {
   font-size: 10pt;
   color: #112d4e;
+  margin-bottom: 0px;
 }
 h1 {
   color: #112d4e;
@@ -125,13 +126,20 @@ h5 {
   color: #3f72af;
 }
 .weeklyIcon {
-  max-width: 40%;
+  max-width: 100%;
   padding: 5pt 5pt;
+  padding-top: 0;
 }
 .card-title {
-  margin: 0;
+  margin-bottom: 0px;
 }
 #world {
   padding: 0 0 15pt 0;
   max-width: 300pt;
+}
+#forecastTitle {
+  margin-bottom: 5px;
+}
+.card-text {
+  margin-bottom: 0px;
 }

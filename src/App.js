@@ -3,7 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Weather from "./Weather";
 // import Date from "./Date";
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 // import Row from 'react-bootstrap/Row'
 
 
