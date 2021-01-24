@@ -2,10 +2,9 @@ import './App.css';
 import React from "react";
 import ReactDOM from "react-dom";
 import Weather from "./Weather";
-import Forecast from "./Forecast";
 // import Date from "./Date";
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
+// import Row from 'react-bootstrap/Row'
 
 
 
@@ -14,13 +13,12 @@ export default function App() {
   return (
     <div className="App">
       <Container>
-        <Row>
+        {/* <Row> */}
             {/* <div id="world">
               <img src="/world_map_.svg" alt="weatherImage" id="world" />
             </div> */}
             <Weather defaultCity="London"/>
-            <Forecast />
-        </Row>
+        {/* </Row> */}
       </Container>
   
       <div>

@@ -3,6 +3,8 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import { Sparklines, SparklinesLine, SparklinesSpots }from 'react-sparklines'
 import Col from 'react-bootstrap/Col'
+import Forecast from "./Forecast";
+import Row from 'react-bootstrap/Row'
 
 export default function Weather(props) {
 const[weatherData,setWeatherData]=useState({ ready: false });
@@ -42,27 +44,33 @@ function handleResponse(response){
 if(weatherData.ready){
 return (
   <div>
-    <WeatherInfo data={weatherData} defaultCity={weatherData.city}/>
+    <Row>
     <Col className="col-12">
+    <WeatherInfo data={weatherData} defaultCity={weatherData.city}/>
           <Sparklines data={[5, 10, 5, 20, 8, 15]} limit={5} width={100} height={20} margin={5}>
       <SparklinesLine color="#3f72af" />
       <SparklinesSpots style={{ fill: "#3f72af" }}/>
       </Sparklines>
       <form onSubmit={handleSubmit}>
       <div className="md-form">
-        <input
-          type="text"
-          placeholder="Insert City"
-          className="form-control"
-          id="searchCity"
-          onChange={handleCityChange}
-        />
+          <input
+            type="text"
+            placeholder="Insert City"
+            className="form-control"
+            id="searchCity"
+            onChange={handleCityChange}
+          />
         <button className="submit">Submit</button>
         <button className="currentLocation">Current Location</button>
       </div>
-    </form>
-          </Col>
+      </form>
+    </Col>
+    <Col className="col-4 my-auto" id="forecast">
+      <Forecast city={weatherData.city} />
+    </Col>
+    </Row>
     </div>
+
   );
 }else{
   search();
