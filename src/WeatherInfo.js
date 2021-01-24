@@ -11,7 +11,7 @@ function showFarenheit(event){
 }
 function showCelcius(event){
     event.preventDefault();
-    setUnit("Celcius");
+    setUnit("celcius");
 }
 
 if (unit === "celcius"){

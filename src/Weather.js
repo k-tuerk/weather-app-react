@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
-import { Sparklines, SparklinesLine, SparklinesSpots }from 'react-sparklines'
 import Col from 'react-bootstrap/Col'
 import Forecast from "./Forecast";
 import Row from 'react-bootstrap/Row'
+// import { Sparklines, SparklinesLine, SparklinesSpots }from 'react-sparklines'
 
 export default function Weather(props) {
 const[weatherData,setWeatherData]=useState({ ready: false });
@@ -47,10 +47,10 @@ return (
     <Row>
     <Col className="col-8 my-auto">
     <WeatherInfo data={weatherData} defaultCity={weatherData.city}/>
-          <Sparklines data={[5, 10, 5, 20, 8, 15]} limit={5} width={100} height={20} margin={5}>
+        {/* <Sparklines data={[5, 10, 5, 20, 8, 15]} limit={5} width={100} height={20} margin={5}>
       <SparklinesLine color="#3f72af" />
       <SparklinesSpots style={{ fill: "#3f72af" }}/>
-      </Sparklines>
+    </Sparklines> */}
       <form onSubmit={handleSubmit}>
       <div className="md-form">
           <input

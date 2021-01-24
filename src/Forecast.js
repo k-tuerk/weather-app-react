@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 // import Col from 'react-bootstrap/Col'
 import WeatherForecastPreview from "./WeatherForecastPreview";
+// import { Sparklines, SparklinesLine, SparklinesSpots }from 'react-sparklines'
 
 export default function Forecast(props) {
 const[loaded, setLoaded]=useState(false);
@@ -19,6 +20,10 @@ if (loaded && props.city === weatherForecast.city.name){
     {weatherForecast.list.slice(0, 5).map(function (forecastItem){
       return <WeatherForecastPreview data={forecastItem} />;
     })}
+    {/* <Sparklines data={[5, 10, 5, 20, 8, 15]} limit={5} width={100} height={20} margin={5}>
+      <SparklinesLine color="#3f72af" />
+      <SparklinesSpots style={{ fill: "#3f72af" }}/>
+    </Sparklines> */}
     </div>
   );
 }else{
