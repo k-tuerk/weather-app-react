@@ -25,10 +25,7 @@ return (
         <img src={props.data.icon} alt="weatherIcon" className="icon" />
         <strong id="currentTemp">{Math.round(props.data.temperature)}</strong>
         <div className="units">
-            °C{" "}|
-          <a href="" onClick={showFarenheit}>
-            °F
-          </a>
+          <button className="unitButton">°C</button>{" "}|<button className="unitButton" onClick={showFarenheit}>°F</button>
         </div>
         <div>
           <ul>
@@ -65,7 +62,7 @@ return (
         <img src={props.data.icon} alt="weatherIcon" className="icon" />
         <strong id="currentTemp">{Math.round(temperatureF)}</strong>
         <div className="units">
-            <a href="" onClick={showCelcius}>°C{" "}</a>|°F
+            <button className="unitButton" onClick={showCelcius}>°C</button>|<button className="unitButton">°F</button>
         </div>
         <div>
           <ul>

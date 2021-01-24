@@ -34,20 +34,7 @@ h4 {
   color: #112d4e;
   font-weight: 300;
 }
-button {
-  color: #f9f7f7;
-  background-color: #3f72af;
-  border-color: #3f72af;
-  padding: 10px 15px;
-  border: 2pt;
-  margin-right: 5px;
-}
-button:hover {
-  background-color: #dbe2ef;
-  border-color: #6b63ff;
-  color: #112d4e;
-  transition: all 200ms ease-in-out;
-}
+
 form {
   padding: 5pt 0 0 0;
 }
@@ -94,6 +81,18 @@ h5 {
 }
 .submit {
   border-radius: 10px;
+  color: #f9f7f7;
+  background-color: #3f72af;
+  border-color: #3f72af;
+  padding: 10px 15px;
+  border: 2pt;
+  margin-right: 5px;
+}
+.submit:hover {
+  background-color: #dbe2ef;
+  border-color: #6b63ff;
+  color: #112d4e;
+  transition: all 200ms ease-in-out;
 }
 .currentLocation {
   border-radius: 10px;
@@ -142,4 +141,19 @@ h5 {
 }
 .card-text {
   margin-bottom: 0px;
+}
+.unitButton {
+  background-color: transparent;
+  border-color: transparent;
+  color: #112d4e;
+  padding: 2px 2px;
+}
+.unitButton:active {
+  border-color: transparent;
+}
+.unitButton:focus {
+  border-color: transparent;
+  color: #112d4e;
+  font-weight: 600;
+  outline: transparent;
 }
